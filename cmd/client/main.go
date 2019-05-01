@@ -18,7 +18,7 @@ func main() {
 	}
 	defer conn.Close()
 	client := pb.NewCatClient(conn)
-	message := &pb.GetMyCatMessage{TargetCat:"tama"}
+	message := &pb.GetMyCatMessage{TargetCat: "tama"}
 	res, err := client.GetMyCat(context.TODO(), message)
 	fmt.Printf("result:%#v \n", res)
 	fmt.Printf("error::%#v \n", err)
